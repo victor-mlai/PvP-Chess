@@ -1,2 +1,8 @@
 # PvP-Chess
 Play Chess with a buddy
+
+Warning: it uses system("cls");	// not suported in other consoles than VS's or CodeBlocks's
+
+Project under construction
+
+For now, it just prints the table and checks some conditions when given a move.
