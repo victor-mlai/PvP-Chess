@@ -7,7 +7,7 @@ int ver_mut(int tabla[8][8], int i, int j, int k, int l)
     int index;
     switch (tabla[i-1][j-1])
     {
-    case 1:
+    case 1: // tower
             if( i==k )
             {
                 if( j<l )
@@ -43,7 +43,7 @@ int ver_mut(int tabla[8][8], int i, int j, int k, int l)
                 }
                 else
                     return 0;
-    case 2:
+    case 2: // horse
             if( i==k-1 && j==l-2 )
                 return 1;
             else if( i==k-1 && j==l+2 )
@@ -62,9 +62,12 @@ int ver_mut(int tabla[8][8], int i, int j, int k, int l)
                                             return 1;
                                         else
                                             return 0;
-    case 3:
-            if( abs(i-k) == abs(j-l) )
+    case 3: // bishop
+            if( abs(i-k) == abs(j-l) )  // if is the same diagonal
             {
+                for( index = 0; index < abs(i-k); index++ ) {
+                    if( tabla[i][index] != 0 )
+                }
                 /*if( j<l )
                 {
                     for( index=j+1; index<l; index++ )
@@ -132,7 +135,7 @@ void citire(int tabla[8][8])
         printf("\tMai incercati odata\t");
         goto tryagain2;
     }
-	
+
     if( !ver_mut(tabla,i,j,k,l) )
     {
         printf("\tMai incearca odata\n");
