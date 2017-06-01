@@ -66,7 +66,7 @@ int ver_mut(int tabla[8][8], int i, int j, int k, int l)
             if( abs(i-k) == abs(j-l) )  // if is the same diagonal
             {
                 for( index = 0; index < abs(i-k); index++ ) {
-                    if( tabla[i][index] != 0 )
+                    if( tabla[i + index][j + index] != 0 )
                 }
                 /*if( j<l )
                 {
